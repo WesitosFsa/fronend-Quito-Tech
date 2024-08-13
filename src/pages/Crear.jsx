@@ -1,6 +1,6 @@
 import React from 'react'
 import { Formulario } from '../components/Formulario.jsx'
-
+import { Link } from 'react-router-dom'
 const Crear = () => {
     return (
 <div className="min-h-screen w-full flex justify-between items-start bg-[url('/public/images/paginalogin.png')] bg-no-repeat bg-cover bg-center">
@@ -9,13 +9,9 @@ const Crear = () => {
         <hr className="border-blue-500" />
         <ul className="mt-5 flex flex-col space-y-4">
             <li className="text-center">
-                <div className="text-white bg-blue-800 px-3 py-2 rounded-md text-xl">Productos</div>
-            </li>
-            <li className="text-center">
-                <div className="text-white bg-blue-800 px-3 py-2 rounded-md text-xl">Buscar</div>
-            </li>
-            <li className="text-center">
-                <div className="text-white bg-blue-800 px-3 py-2 rounded-md text-xl">Registrar tienda</div>
+                <div className="text-white bg-blue-800 px-3 py-2 rounded-md text-xl hover:bg-blue-700">
+                <Link to="/dashboard">Inicio</Link>
+                </div>
             </li>
         </ul>
     </div>
@@ -27,6 +23,9 @@ const Crear = () => {
             <Formulario />
         </div>
     </div>
+    <div className="absolute bottom-4 left-4">
+                    <Link to="/" onClick={() => { localStorage.clear() }}><img src="/public/images/salida.png" alt="Volver" className="w-16 h-16" /></Link>
+            </div>
 </div>
     )
 
